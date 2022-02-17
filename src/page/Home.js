@@ -3,15 +3,12 @@ import "./Home.css";
 import Git from "../assest/image/github.svg";
 import Dribble from "../assest/image/dribble.svg";
 import Twitter from "../assest/image/twitter.svg";
-
 import { useState } from "react";
-//mobile
 import { FiSliders, FiX, FiMenu } from "react-icons/fi";
 
 function Home() {
    const [click, setClick] = useState(false);
    const handleClick = () => setClick(!click);
-   console.log("click");
    const closeMobileMenu = () => setClick(false);
 
    return (
@@ -39,8 +36,13 @@ function Home() {
                   <a href="#somthing">Blog</a>
                </li>
             </ul>
-            <div className="mobile-menu" onClick={handleClick}>
-               {click ? <FiX /> : <FiMenu />}
+            <div className="mobile-menu">
+               <div className="click-menu-mobile" onClick={handleClick}>
+                  {click ? <FiX /> : <FiMenu />}
+               </div>
+               <div className="header-home-main">
+                  <h1>HOME</h1>
+               </div>
             </div>
          </div>
          <div className="container-home">
