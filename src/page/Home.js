@@ -4,7 +4,7 @@ import Git from "../assest/image/github.svg";
 import Dribble from "../assest/image/dribble.svg";
 import Twitter from "../assest/image/twitter.svg";
 import { useState } from "react";
-import { FiSliders, FiX, FiMenu } from "react-icons/fi";
+import { FiGithub, FiX, FiMenu } from "react-icons/fi";
 
 function Home() {
    const [click, setClick] = useState(false);
@@ -16,9 +16,7 @@ function Home() {
          <div className="navbar">
             <ul className={click ? "menu active" : "menu"}>
                <li className="menu-link" onClick={closeMobileMenu}>
-                  <a href="#somthing" onClick={closeMobileMenu}>
-                     Home
-                  </a>
+                  <a href="#somthing">Home</a>
                </li>
                <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">About</a>
@@ -76,7 +74,7 @@ function Home() {
             </div>
             <div className="img-link">
                <div className="git">
-                  <a href="https://www.figma.com">
+                  <a href="https://github.com/AnuwatThisuka">
                      <img src={Git} alt="" />
                   </a>
                </div>
@@ -93,7 +91,7 @@ function Home() {
             </div>
             <div className="coding">
                <p>
-                  Code By Anuwat Thisuka <FiSliders />
+                  Code By Anuwat Thisuka <FiGithub />
                </p>
             </div>
          </div>

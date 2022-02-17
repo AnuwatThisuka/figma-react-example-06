@@ -228,6 +228,8 @@
     text-align: center;
 }
 
+
+/*----------Resposive-----------*/
 @media screen and (max-width: 812px) {
     .home {
         width: 100vw;
