@@ -3,30 +3,45 @@ import "./Home.css";
 import Git from "../assest/image/github.svg";
 import Dribble from "../assest/image/dribble.svg";
 import Twitter from "../assest/image/twitter.svg";
+
+import { useState } from "react";
+//mobile
+import { FiSliders, FiX, FiMenu } from "react-icons/fi";
+
 function Home() {
+   const [click, setClick] = useState(false);
+   const handleClick = () => setClick(!click);
+   console.log("click");
+   const closeMobileMenu = () => setClick(false);
+
    return (
       <div className="home">
          <div className="navbar">
-            <ul>
-               <li>
-                  <a href="#somthing">Home</a>
+            <ul className={click ? "menu active" : "menu"}>
+               <li className="menu-link" onClick={closeMobileMenu}>
+                  <a href="#somthing" onClick={closeMobileMenu}>
+                     Home
+                  </a>
                </li>
-               <li>
+               <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">About</a>
                </li>
-               <li>
+               <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">Contract</a>
                </li>
-               <li>
+               <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">Portfolio</a>
                </li>
-               <li>
+               <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">Journey</a>
                </li>
-               <li>
+               <li className="menu-link" onClick={closeMobileMenu}>
                   <a href="#somthing">Blog</a>
                </li>
             </ul>
+            <div className="mobile-menu" onClick={handleClick}>
+               {click ? <FiX /> : <FiMenu />}
+            </div>
          </div>
          <div className="container-home">
             <div className="container-home-main">
@@ -59,17 +74,25 @@ function Home() {
             </div>
             <div className="img-link">
                <div className="git">
-                  <img src={Git} alt="" />
+                  <a href="https://www.figma.com">
+                     <img src={Git} alt="" />
+                  </a>
                </div>
                <div className="dribble">
-                  <img src={Dribble} alt="" />
+                  <a href="https://www.dribble.com">
+                     <img src={Dribble} alt="" />
+                  </a>
                </div>
                <div className="twitter">
-                  <img src={Twitter} alt="" />
+                  <a href="https://www.twitter.com">
+                     <img src={Twitter} alt="" />
+                  </a>
                </div>
             </div>
             <div className="coding">
-               <p>Code By Anuwat Thisuka</p>
+               <p>
+                  Code By Anuwat Thisuka <FiSliders />
+               </p>
             </div>
          </div>
       </div>
